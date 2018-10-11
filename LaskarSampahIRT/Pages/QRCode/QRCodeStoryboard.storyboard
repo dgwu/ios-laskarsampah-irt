@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g5z-rV-51d">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code View Controller-->
+        <scene sceneID="gTf-WB-lSZ">
+            <objects>
+                <viewController id="g5z-rV-51d" customClass="QRCodeViewController" customModule="LaskarSampahIRT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="98Y-2d-EHY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ivy-AJ-fUf">
+                                <rect key="frame" x="37.666666666666657" y="256" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Vmo-Qb-UNq"/>
+                                    <constraint firstAttribute="height" constant="300" id="hGX-Z1-Bye"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ivy-AJ-fUf" firstAttribute="centerY" secondItem="98Y-2d-EHY" secondAttribute="centerY" id="VBL-aV-zyh"/>
+                            <constraint firstItem="ivy-AJ-fUf" firstAttribute="centerX" secondItem="98Y-2d-EHY" secondAttribute="centerX" id="p3s-jW-GLB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iDg-FO-9HW"/>
+                    </view>
+                    <connections>
+                        <outlet property="qrImageView" destination="ivy-AJ-fUf" id="2vz-ka-5ev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJM-HG-jpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="-59.11330049261084"/>
+        </scene>
+    </scenes>
+</document>
