@@ -28,6 +28,11 @@ class LoginViewController: UIViewController
         
     }
     
+    @IBAction func btnLupaPassword(_ sender: Any)
+    {
+        
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

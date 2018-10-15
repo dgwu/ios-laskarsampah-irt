@@ -10,21 +10,29 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var txtNama: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtTelepon: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtRePassword: UITextField!
+    @IBOutlet weak var btnSimpan: UIButton!
+    
+    
+    
+    @IBAction func btnSimpanClick(_ sender: Any)
+    {
+        
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
     }
-    */
+    
+    
 
 }

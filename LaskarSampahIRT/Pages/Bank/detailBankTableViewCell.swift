@@ -10,6 +10,8 @@ import UIKit
 
 class detailBankTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblNamaBank: UILabel!
+    @IBOutlet weak var lblAlamat: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
