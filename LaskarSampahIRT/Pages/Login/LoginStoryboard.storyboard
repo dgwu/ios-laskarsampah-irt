@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XeO-13-HDo">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,6 +24,7 @@
                                 <state key="normal" title="Masuk"/>
                                 <connections>
                                     <action selector="btnMasuk:" destination="7ez-z1-k6g" eventType="touchUpInside" id="Qs6-UG-QAl"/>
+                                    <segue destination="ALg-ya-nsM" kind="show" id="49H-8O-dPk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smc-vr-3Te">
@@ -33,6 +34,7 @@
                                 <state key="normal" title="Daftar"/>
                                 <connections>
                                     <action selector="btnDaftar:" destination="7ez-z1-k6g" eventType="touchUpInside" id="5Qp-Ny-2Ep"/>
+                                    <segue destination="BmF-6B-k3l" kind="show" id="Qop-Yn-UxW"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-uO-9FO">
@@ -74,6 +76,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TQp-zL-Rbb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jEZ-GO-zH8"/>
                     <connections>
                         <outlet property="logo" destination="Ooc-uO-9FO" id="ZXx-z0-t5P"/>
                         <outlet property="txtEmailTlp" destination="aqq-MX-LjY" id="qbc-t0-XL2"/>
@@ -81,6 +84,42 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvN-UA-EMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="-518.7192118226601"/>
+        </scene>
+        <!--ProfileStoryboard-->
+        <scene sceneID="sFW-gn-Tii">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileStoryboard" id="ALg-ya-nsM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5v-b4-ZC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="-664"/>
+        </scene>
+        <!--RegisterStoryboard-->
+        <scene sceneID="v4g-ec-98z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegisterStoryboard" id="BmF-6B-k3l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAh-iR-IYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1329" y="-605"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kCS-pX-Enb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XeO-13-HDo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="lrD-ct-YOv"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h8d-xi-gpG">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ez-z1-k6g" kind="relationship" relationship="rootViewController" id="3XW-zL-3SA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZU-Oi-kB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-282.39999999999998" y="-518.7192118226601"/>
         </scene>
