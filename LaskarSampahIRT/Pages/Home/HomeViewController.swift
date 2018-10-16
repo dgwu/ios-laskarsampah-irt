@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        //self.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "noun_Home_1994343"), tag: 0)
         // Do any additional setup after loading the view.
     }
     

@@ -27,6 +27,7 @@
 		F399F3CB21746975001FBE8C /* BankSampahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CA21746975001FBE8C /* BankSampahViewController.swift */; };
 		F399F3CD2174FFAA001FBE8C /* ListBankSampah.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */; };
 		F399F3CF217501D4001FBE8C /* detailBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */; };
+		F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F399F3CA21746975001FBE8C /* BankSampahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankSampahViewController.swift; sourceTree = "<group>"; };
 		F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBankSampah.swift; sourceTree = "<group>"; };
 		F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailBankTableViewCell.swift; sourceTree = "<group>"; };
+		F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBankSampahViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				F399F3C821746932001FBE8C /* BankSampahStoryboard.storyboard */,
 				F399F3CA21746975001FBE8C /* BankSampahViewController.swift */,
 				F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */,
+				F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */,
 			);
 			path = Bank;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				F399F3C421743923001FBE8C /* RegisterViewController.swift in Sources */,
 				F311B71B216DC6FE001E3123 /* LoginViewController.swift in Sources */,
+				F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */,
 				918F042F216DA31400A1764D /* MainViewController.swift in Sources */,
 				918F0447216DC54900A1764D /* NewsAndTipsCollectionViewCell.swift in Sources */,
 				918F042D216DA31400A1764D /* AppDelegate.swift in Sources */,

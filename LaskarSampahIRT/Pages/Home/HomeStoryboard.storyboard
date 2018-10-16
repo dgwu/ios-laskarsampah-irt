@@ -132,7 +132,7 @@
         <scene sceneID="svc-Oi-9nL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XbM-1g-9PO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="ZWY-sP-d46"/>
+                    <tabBarItem key="tabBarItem" springLoaded="YES" systemItem="mostViewed" id="ZWY-sP-d46"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4SZ-fi-5I5">
