@@ -38,8 +38,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsAndTips", for: indexPath) as! NewsAndTipsCollectionViewCell
         
-        cell.newsImageView.image = UIImage(named: "sample_img")
-        cell.newsLabel.text = "Test \(indexPath.row)"
+        cell.newsImageView.image = UIImage(named: "Recycle")
+        cell.newsLabel.text = "News \(indexPath.row + 1)"
         
         return cell
     }
