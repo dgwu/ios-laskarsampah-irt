@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+
+
 class DetailBankSampahViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -21,6 +23,7 @@ class DetailBankSampahViewController: UIViewController {
     @IBOutlet weak var lblContact: UILabel!
     var latitude : Double = 0
     var longtitude : Double = 0
+    
     @IBOutlet weak var BtnDirection: UIButton!
     
     
@@ -36,6 +39,37 @@ class DetailBankSampahViewController: UIViewController {
         
         
     }
+    @IBAction func btnPetunjukArah(_ sender: Any)
+    {
+        getDirection(latitude: latitude, longitude: longtitude, storeName: lblBankSampahTitle.text)
+    }
+    
+    func getDirection(latitude : Double?, longitude : Double?, storeName : String?) {
+        if let lat = latitude, let lot = longitude {
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(lat, lot)
+            let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+            
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            
+            if let name = storeName {
+                mapItem.name = name
+            }
+            
+            var options : NSDictionary! = nil
+            options = [
+                
+                MKLaunchOptionsMapCenterKey: NSValue.init(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span),
+                MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+            ]
+            
+            mapItem.openInMaps(launchOptions: options as? [String : Any])
+        }
+        
+    }
+    
     
     func setMapView()
     {
@@ -50,6 +84,9 @@ class DetailBankSampahViewController: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: lokasi.latitude, longitude: lokasi.longitude)
         self.mapView.addAnnotation(annotation)
+        
+        
+        
         mapView.setRegion(region, animated: true)
         
         

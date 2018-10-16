@@ -8,14 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController
+class LoginViewController: UIViewController,UITextFieldDelegate
 {
     //MARK Outlet
-    @IBOutlet weak var logo: UIView!
     @IBOutlet weak var txtEmailTlp: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
 
     
+    @IBOutlet weak var btnmasuk: UIButton!
+    @IBOutlet weak var btnDaftar: UIButton!
     
     //MARK Function
     @IBAction func btnMasuk(_ sender: Any)
@@ -33,11 +34,25 @@ class LoginViewController: UIViewController
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-    
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        btnmasuk.layer.cornerRadius = 10
+        btnDaftar.layer.cornerRadius = 10
+        
     
     }
 }

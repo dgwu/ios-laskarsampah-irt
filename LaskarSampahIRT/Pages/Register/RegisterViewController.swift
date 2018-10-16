@@ -31,6 +31,11 @@ class RegisterViewController: UIViewController {
     {
         super.viewDidLoad()
         
+        
+        
+        btnSimpan.layer.cornerRadius = 10
+        btnSimpan.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.4666666667, blue: 0.368627451, alpha: 1)
+        
     }
     
     

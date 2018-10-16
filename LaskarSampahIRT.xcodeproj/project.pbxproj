@@ -30,6 +30,7 @@
 		F399F3CD2174FFAA001FBE8C /* ListBankSampah.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */; };
 		F399F3CF217501D4001FBE8C /* detailBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */; };
 		F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */; };
+		F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBankSampah.swift; sourceTree = "<group>"; };
 		F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailBankTableViewCell.swift; sourceTree = "<group>"; };
 		F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBankSampahViewController.swift; sourceTree = "<group>"; };
+		F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */,
 				9155FDBB2175E98000761A1B /* ProfileViewController.swift */,
+				F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				918F042D216DA31400A1764D /* AppDelegate.swift in Sources */,
 				91692B6C216EEC7E0032B031 /* QRCodeHelper.swift in Sources */,
 				F399F3CF217501D4001FBE8C /* detailBankTableViewCell.swift in Sources */,
+				F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */,
 				F399F3CB21746975001FBE8C /* BankSampahViewController.swift in Sources */,
 				918F044A216DC97A00A1764D /* ItemPrice.swift in Sources */,
 				91692B70216EECD30032B031 /* QRCodeViewController.swift in Sources */,
@@ -435,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4S25B8KB84;
 				INFOPLIST_FILE = LaskarSampahIRT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4S25B8KB84;
 				INFOPLIST_FILE = LaskarSampahIRT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
