@@ -239,11 +239,11 @@
             </objects>
             <point key="canvasLocation" x="2037.5999999999999" y="22.906403940886701"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bank Sampah-->
         <scene sceneID="VmT-wo-Kts">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ExD-9b-rvq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="fE9-6R-IHA"/>
+                    <tabBarItem key="tabBarItem" title="Bank Sampah" image="Location Icon" id="fE9-6R-IHA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feB-Ib-rqd">
@@ -261,6 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Location Icon" width="17" height="23"/>
         <image name="noun_Email_842043" width="179" height="175"/>
         <image name="noun_Home_1994343" width="195" height="158"/>
         <image name="noun_Telephone_1995660" width="181" height="198"/>

@@ -103,11 +103,11 @@
             </objects>
             <point key="canvasLocation" x="1329" y="-605"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="kCS-pX-Enb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XeO-13-HDo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="lrD-ct-YOv"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Icon" id="lrD-ct-YOv"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h8d-xi-gpG">
@@ -125,6 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 6.2-1" width="354" height="359"/>
+        <image name="Group 6.2-1" width="1416" height="1436"/>
+        <image name="Profile Icon" width="25" height="28"/>
     </resources>
 </document>

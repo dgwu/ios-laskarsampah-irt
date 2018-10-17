@@ -144,11 +144,11 @@
             </objects>
             <point key="canvasLocation" x="1004" y="135.96059113300493"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="svc-Oi-9nL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XbM-1g-9PO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" springLoaded="YES" systemItem="mostViewed" id="ZWY-sP-d46"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="News Icon" springLoaded="YES" id="ZWY-sP-d46"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4SZ-fi-5I5">
@@ -165,4 +165,7 @@
             <point key="canvasLocation" x="61.600000000000001" y="135.96059113300493"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="News Icon" width="21" height="28"/>
+    </resources>
 </document>
