@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         groupViewProfile.layer.cornerRadius = 10
         viewHistory.layer.cornerRadius = 10
         

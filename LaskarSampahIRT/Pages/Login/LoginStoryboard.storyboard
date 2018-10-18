@@ -24,7 +24,7 @@
                                 <state key="normal" title="Masuk"/>
                                 <connections>
                                     <action selector="btnMasuk:" destination="7ez-z1-k6g" eventType="touchUpInside" id="Qs6-UG-QAl"/>
-                                    <segue destination="ALg-ya-nsM" kind="show" id="49H-8O-dPk"/>
+                                    <segue destination="ALg-ya-nsM" kind="show" identifier="toHome" id="49H-8O-dPk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smc-vr-3Te">
@@ -125,7 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 6.2-1" width="1416" height="1436"/>
+        <image name="Group 6.2-1" width="354" height="359"/>
         <image name="Profile Icon" width="25" height="28"/>
     </resources>
 </document>

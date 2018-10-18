@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtRePassword: UITextField!
     @IBOutlet weak var btnSimpan: UIButton!
     
+    @IBOutlet weak var backView: UIView!
     
     
     @IBAction func btnSimpanClick(_ sender: Any)
@@ -31,7 +32,7 @@ class RegisterViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        
+        backView.layer.cornerRadius = 10
         
         btnSimpan.layer.cornerRadius = 10
         btnSimpan.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.4666666667, blue: 0.368627451, alpha: 1)

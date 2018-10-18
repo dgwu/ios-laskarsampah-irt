@@ -34,6 +34,20 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinasi = segue.destination as? ProfileViewController
+        {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Logout"
+            navigationItem.backBarButtonItem = backItem
+        } else{
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
+        }
+        
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
