@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var newsAndTipsCollectionView: UICollectionView!
     @IBOutlet weak var priceTableView: UITableView!
     
+    var priceList = [ItemPrice]()
+    let apiHelper = ApiHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         newsAndTipsCollectionView.dataSource = self
         priceTableView.delegate = self
         priceTableView.dataSource = self
+        
+        self.apiHelper.fetchPriceList { (priceList) in
+            if let priceList = priceList {
+                self.priceList = priceList
+                DispatchQueue.main.async {
+                    self.priceTableView.reloadData()
+                }
+            }
+        }
     }
     
     // MARK: Collection View Delegate
@@ -50,14 +61,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: Table View Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyPriceList.count
+        return priceList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceCell", for: indexPath)
-        let priceItem = dummyPriceList[indexPath.row]
-        cell.textLabel?.text = priceItem.description
-        cell.detailTextLabel?.text = "Rp \(priceItem.price)/\(priceItem.priceUnit)"
+        let priceItem = priceList[indexPath.row]
+        cell.textLabel?.text = priceItem.item_name
+        cell.detailTextLabel?.text = "Rp \(priceItem.item_price)/\(priceItem.item_unit)"
         
         return cell
     }

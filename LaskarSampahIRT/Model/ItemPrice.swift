@@ -7,16 +7,16 @@
 //
 
 import Foundation
-struct ItemPrice {
+struct ItemPrice: Codable {
     let id: Int
-    let description: String
-    let price: Double
-    let priceUnit: String
-    let poin: Double
+    let item_name: String
+    let item_price: Int
+    let item_unit: String
+    let item_poin: Int
 }
 
 var dummyPriceList = [
-    ItemPrice(id: 1, description: "Kardus", price: 1300, priceUnit: "Kg", poin: 10),
-    ItemPrice(id: 2, description: "Buku/Majalah/Koran", price: 700, priceUnit: "kg", poin: 5),
-    ItemPrice(id: 3, description: "Gelas Plastik Bersih", price: 4000, priceUnit: "kg", poin: 35)
+    ItemPrice(id: 1, item_name: "Kardus", item_price: 1300, item_unit: "Kg", item_poin: 10),
+    ItemPrice(id: 2, item_name: "Buku/Majalah/Koran", item_price: 700, item_unit: "kg", item_poin: 5),
+    ItemPrice(id: 3, item_name: "Gelas Plastik Bersih", item_price: 4000, item_unit: "kg", item_poin: 35)
 ]
