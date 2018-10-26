@@ -34,7 +34,6 @@ class BankSampahViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationDetail = segue.destination as? DetailBankSampahViewController
         {
