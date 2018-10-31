@@ -114,4 +114,45 @@ class ApiHelper {
         }
     }
     
+    func fetchNewsList(completion: @escaping([News]?) -> Void) {
+        let apiPath = "getNews"
+        postAndCheckIsValid(apiPath: apiPath, parameters: [:]) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        if let newsList = result["news"] as? [[String : Any]] {
+                            // turn dictionary into data JsonDataObject
+                            let jsonData = try JSONSerialization.data(withJSONObject: newsList, options: JSONSerialization.WritingOptions.sortedKeys)
+                            
+                            // decode the JsonDataObject into desired object using Decodable
+                            let newsListStructs = try JSONDecoder().decode([News].self, from: jsonData)
+                            completion(newsListStructs)
+                            return
+                        } else {
+                            print("gagal translate news list")
+                        }
+                    } else {
+                        print("gagal translate result")
+                    }
+                } catch {
+                    print("Error on fetchNewsList: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
+
+    static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
+        let imageUrl = URL(string: urlString)!
+        let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+            if let data = data,
+                let fetchedImage = UIImage(data: data) {
+                completion(fetchedImage)
+                return
+            }
+            // default image
+            completion(UIImage(named: "Recycle"))
+        }
+        task.resume()
+    }
 }
