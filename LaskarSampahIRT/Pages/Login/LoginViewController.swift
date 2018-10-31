@@ -45,7 +45,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
             backItem.title = "Back"
             navigationItem.backBarButtonItem = backItem
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -66,7 +65,5 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         view.addGestureRecognizer(tap)
         btnmasuk.layer.cornerRadius = 10
         btnDaftar.layer.cornerRadius = 10
-        
-    
     }
 }

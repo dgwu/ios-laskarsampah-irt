@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 }
             }
         }
+        
+       
     }
     
     // MARK: Collection View Delegate

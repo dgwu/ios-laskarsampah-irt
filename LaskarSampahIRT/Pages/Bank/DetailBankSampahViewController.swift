@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import CoreLocation
 
 class DetailBankSampahViewController: UIViewController {
 
@@ -23,19 +23,64 @@ class DetailBankSampahViewController: UIViewController {
     @IBOutlet weak var lblContact: UILabel!
     var latitude : Double = 0
     var longtitude : Double = 0
+    var bankSampah: ListBankSampah?
     
     @IBOutlet weak var BtnDirection: UIButton!
     
+    var detailSampah = [ListBankSampah]()
+    let apiHelper = ApiHelper()
     
     func setDetailBankSampah()  {
-        let bank = dummyLocationBank[IDData]
-        longtitude = Double(bank.longitude)!
-        latitude = Double(bank.latitude)!
-        lblBankSampahTitle.text = bank.nama
-        lblAlamat.text = bank.alamat
-        lblTelepon.text = bank.telepon
-        lblEmail.text = bank.email
-        lblContact.text = bank.kontak
+//        let bank = dummyLocationBank[IDData]
+//        longtitude = Double(bank.longitude)!
+//        latitude = Double(bank.latitude)!
+//        lblBankSampahTitle.text = bank.nama
+//        lblAlamat.text = bank.alamat
+//        lblTelepon.text = bank.telepon
+//        lblEmail.text = bank.email
+//        lblContact.text = bank.kontak
+//
+  
+        let locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        
+        var currentLocation: CLLocation!
+        
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            currentLocation = locManager.location
+        }
+        let currLatitude = currentLocation.coordinate.latitude
+        let currLongitude = currentLocation.coordinate.longitude
+        
+        
+        
+//        self.apiHelpere.fetchBankList(longitude: currentLocation.coordinate.longitude, latitude: currentLocation.coordinate.latitude)
+//        { (ListBankSampah) in
+//            if let BankList = ListBankSampah
+//            {
+//                self.bankList = BankList
+//                DispatchQueue.main.async
+//                    {
+//                        self.tableViewBank.reloadData()
+//                }
+//            }
+//        }
+        
+        print(IDData)
+       let bankSampah = self.bankSampah
+        
+        
+        longtitude = Double(bankSampah?.longitude ?? longtitude)
+        latitude = Double(bankSampah?.latitude ?? latitude)
+        lblBankSampahTitle.text = bankSampah?.namaBank
+        lblAlamat.text = bankSampah?.alamat
+        lblTelepon.text = bankSampah?.telepon
+        //lblEmail.text = "\(bankSampah?.distance)"
+        lblContact.text = bankSampah?.namaAdmin
+        
+        let jarak = String(format:"%.1f",(bankSampah?.distance)!) + "Km"
+        lblEmail?.text = jarak
         
         
     }
@@ -59,7 +104,6 @@ class DetailBankSampahViewController: UIViewController {
             
             var options : NSDictionary! = nil
             options = [
-                
                 MKLaunchOptionsMapCenterKey: NSValue.init(mkCoordinate: regionSpan.center),
                 MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span),
                 MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
