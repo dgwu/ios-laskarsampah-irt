@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-       
+        self.priceTableView.layer.cornerRadius = 10
     }
     
     // MARK: Collection View Delegate
@@ -70,7 +70,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceCell", for: indexPath)
         let priceItem = priceList[indexPath.row]
         cell.textLabel?.text = priceItem.item_name
-        cell.detailTextLabel?.text = "Rp \(priceItem.item_price)/\(priceItem.item_unit)"
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.groupingSeparator = "."
+        let formattedPrice = numberFormatter.string(from: NSNumber(value: priceItem.item_price))
+        
+        cell.detailTextLabel?.text = "Rp \(formattedPrice!)/\(priceItem.item_unit)"
         
         return cell
     }
