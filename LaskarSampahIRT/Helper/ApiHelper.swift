@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ApiHelper {
-    let baseURL = "http://localhost:8080"
+    let baseURL = "http://laskarsampah.danielgunawan.com"
     
     func requestAndCheckIsValid(apiPath: String, completion: @escaping([String:Any]?) -> Void) {
         let requestUrl = URL(string: "\(self.baseURL)/\(apiPath)")!
