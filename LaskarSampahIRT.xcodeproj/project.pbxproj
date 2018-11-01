@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BE141218989B000DF8CFC /* UIView+Helper.swift */; };
+		912D559E218A576700FFE9CC /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D559D218A576700FFE9CC /* News.swift */; };
+		912D55A1218A5B4500FFE9CC /* NewsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */; };
+		912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55A2218A5B5800FFE9CC /* NewsViewController.swift */; };
 		9155FDBA2175E97200761A1B /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */; };
 		9155FDBC2175E98000761A1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155FDBB2175E98000761A1B /* ProfileViewController.swift */; };
 		91692B6C216EEC7E0032B031 /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91692B6B216EEC7E0032B031 /* QRCodeHelper.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910BE141218989B000DF8CFC /* UIView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
+		912D559D218A576700FFE9CC /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsStoryboard.storyboard; sourceTree = "<group>"; };
+		912D55A2218A5B5800FFE9CC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		9155FDBB2175E98000761A1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		91692B6B216EEC7E0032B031 /* QRCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeHelper.swift; sourceTree = "<group>"; };
@@ -77,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		912D559F218A5B3400FFE9CC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */,
+				912D55A2218A5B5800FFE9CC /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		9155FDB82175E96600761A1B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +119,7 @@
 				91692B6B216EEC7E0032B031 /* QRCodeHelper.swift */,
 				917DFFFC2182C54500E14ABB /* ApiHelper.swift */,
 				917DFFFE2182C5BD00E14ABB /* URL+Helpers.swift */,
+				910BE141218989B000DF8CFC /* UIView+Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -149,6 +167,7 @@
 		918F0440216DA51E00A1764D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				912D559F218A5B3400FFE9CC /* News */,
 				9155FDB82175E96600761A1B /* Profile */,
 				F399F3C5217468EA001FBE8C /* Bank */,
 				F311B717216DC6D1001E3123 /* Login */,
@@ -174,6 +193,7 @@
 			children = (
 				918F0449216DC97A00A1764D /* ItemPrice.swift */,
 				F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */,
+				912D559D218A576700FFE9CC /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +293,7 @@
 				F399F3C921746932001FBE8C /* BankSampahStoryboard.storyboard in Resources */,
 				9155FDBA2175E97200761A1B /* ProfileStoryboard.storyboard in Resources */,
 				918F0443216DA5C000A1764D /* HomeStoryboard.storyboard in Resources */,
+				912D55A1218A5B4500FFE9CC /* NewsStoryboard.storyboard in Resources */,
 				918F0432216DA31400A1764D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +308,11 @@
 				F399F3C421743923001FBE8C /* RegisterViewController.swift in Sources */,
 				F311B71B216DC6FE001E3123 /* LoginViewController.swift in Sources */,
 				F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */,
+				912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */,
 				918F042F216DA31400A1764D /* MainViewController.swift in Sources */,
+				910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */,
 				917DFFFD2182C54500E14ABB /* ApiHelper.swift in Sources */,
+				912D559E218A576700FFE9CC /* News.swift in Sources */,
 				917DFFFF2182C5BD00E14ABB /* URL+Helpers.swift in Sources */,
 				9155FDBC2175E98000761A1B /* ProfileViewController.swift in Sources */,
 				918F0447216DC54900A1764D /* NewsAndTipsCollectionViewCell.swift in Sources */,

@@ -16,7 +16,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var priceTableView: UITableView!
     
     var priceList = [ItemPrice]()
+    var newsList = [News]()
     let apiHelper = ApiHelper()
+    var selectedNewsIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,24 +43,43 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         self.priceTableView.layer.cornerRadius = 10
+        
+        self.apiHelper.fetchNewsList { (newsList) in
+            if let newsList = newsList {
+                self.newsList = newsList
+                DispatchQueue.main.async {
+                    self.newsAndTipsCollectionView.reloadData()
+                }
+            }
+        }
     }
     
     // MARK: Collection View Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return self.newsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsAndTips", for: indexPath) as! NewsAndTipsCollectionViewCell
+        let news = self.newsList[indexPath.row]
         
-        cell.newsImageView.image = UIImage(named: "Recycle")
-        cell.newsLabel.text = "News \(indexPath.row + 1)"
+//        cell.newsImageView.image = UIImage(named: "Recycle")
+        ApiHelper.fetchImage(from: news.url) { (fetchedImage) in
+            if let fetchedImage = fetchedImage {
+                DispatchQueue.main.async {
+                    cell.newsImageView.image = fetchedImage
+                }
+            }
+        }
+        cell.newsLabel.text = news.judul
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select at \(indexPath.row)")
+        self.selectedNewsIndex = indexPath.row
+        self.performSegue(withIdentifier: "ToNews", sender: nil)
     }
     
     // MARK: Table View Delegate
@@ -79,5 +100,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.detailTextLabel?.text = "Rp \(formattedPrice!)/\(priceItem.item_unit)"
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewsViewController, let selectedNewsIndex = selectedNewsIndex {
+            destination.news = self.newsList[selectedNewsIndex]
+        }
     }
 }
