@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var groupViewProfile: UIView!
     @IBOutlet weak var viewHistory: UIView!
     
+    @IBOutlet weak var imgRateing: UIImageView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -21,9 +22,15 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         groupViewProfile.layer.cornerRadius = 10
         viewHistory.layer.cornerRadius = 10
         
+        imgRateing.layer.cornerRadius = imgRateing.frame.width / 2
+        imgRateing.layer.borderWidth = 5
+        imgRateing.layer.borderColor = #colorLiteral(red: 0.8214223385, green: 0.81848979, blue: 0.1368253231, alpha: 1)
+        
         tableViewHistory.delegate = self
         tableViewHistory.dataSource = self
         setupView()
+        
+        
     }
     
     func setupView() {

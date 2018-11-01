@@ -81,7 +81,7 @@ class BankSampahViewController: UIViewController,UITableViewDataSource,UITableVi
         tableViewBank.delegate = self
         tableViewBank.dataSource = self
         
-        
+        tableViewBank.layer.cornerRadius = 10
         
         
         

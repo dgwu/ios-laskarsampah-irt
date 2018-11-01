@@ -63,7 +63,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        btnmasuk.layer.cornerRadius = 10
-        btnDaftar.layer.cornerRadius = 10
+        btnmasuk.layer.cornerRadius = 25
+        btnmasuk.backgroundColor = #colorLiteral(red: 0.8214223385, green: 0.81848979, blue: 0.1368253231, alpha: 1)
+        
+        btnDaftar.layer.cornerRadius = 25
+        btnDaftar.backgroundColor = #colorLiteral(red: 0, green: 0.5560629368, blue: 0.4413390756, alpha: 1)
+        btnDaftar.layer.borderColor =  #colorLiteral(red: 0.8214223385, green: 0.81848979, blue: 0.1368253231, alpha: 1)
+        btnDaftar.layer.borderWidth = 5
+        
+
     }
 }

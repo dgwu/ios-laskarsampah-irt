@@ -27,6 +27,8 @@ class DetailBankSampahViewController: UIViewController {
     
     @IBOutlet weak var BtnDirection: UIButton!
     
+    @IBOutlet weak var viewBgitem: UIView!
+    
     var detailSampah = [ListBankSampah]()
     let apiHelper = ApiHelper()
     
@@ -141,7 +143,9 @@ class DetailBankSampahViewController: UIViewController {
         super.viewDidLoad()
         
         BtnDirection.layer.cornerRadius = 10
-        BtnDirection.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.4666666667, blue: 0.368627451, alpha: 1)
+        BtnDirection.backgroundColor = #colorLiteral(red: 0.8214223385, green: 0.81848979, blue: 0.1368253231, alpha: 1)
+        
+        viewBgitem.layer.cornerRadius = 10
         
         setDetailBankSampah()
         setMapView()

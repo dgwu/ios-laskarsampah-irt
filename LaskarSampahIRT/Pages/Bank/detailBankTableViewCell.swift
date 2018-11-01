@@ -20,7 +20,7 @@ class detailBankTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        viewBackground.backgroundColor = #colorLiteral(red: 1, green: 0.9891478419, blue: 0.9185404181, alpha: 1)
+        //viewBackground.backgroundColor = #colorLiteral(red: 1, green: 0.9891478419, blue: 0.9185404181, alpha: 1)
         viewBackground.layer.cornerRadius = 15
         
         viewJarak.backgroundColor = #colorLiteral(red: 0.0672223568, green: 0.4756054878, blue: 0.3615720868, alpha: 1)
