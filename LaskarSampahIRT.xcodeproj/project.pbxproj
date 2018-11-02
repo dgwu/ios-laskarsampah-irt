@@ -37,6 +37,7 @@
 		F399F3CF217501D4001FBE8C /* detailBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */; };
 		F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */; };
 		F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */; };
+		F3D8A95A218BFD9000B94218 /* loginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A959218BFD9000B94218 /* loginUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		F399F3CE217501D4001FBE8C /* detailBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailBankTableViewCell.swift; sourceTree = "<group>"; };
 		F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBankSampahViewController.swift; sourceTree = "<group>"; };
 		F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		F3D8A959218BFD9000B94218 /* loginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				918F0449216DC97A00A1764D /* ItemPrice.swift */,
 				F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */,
 				912D559D218A576700FFE9CC /* News.swift */,
+				F3D8A959218BFD9000B94218 /* loginUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */,
 				918F042F216DA31400A1764D /* MainViewController.swift in Sources */,
 				910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */,
+				F3D8A95A218BFD9000B94218 /* loginUser.swift in Sources */,
 				917DFFFD2182C54500E14ABB /* ApiHelper.swift in Sources */,
 				912D559E218A576700FFE9CC /* News.swift in Sources */,
 				917DFFFF2182C5BD00E14ABB /* URL+Helpers.swift in Sources */,

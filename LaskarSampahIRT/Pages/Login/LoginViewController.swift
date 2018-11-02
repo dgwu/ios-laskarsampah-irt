@@ -18,10 +18,87 @@ class LoginViewController: UIViewController,UITextFieldDelegate
     @IBOutlet weak var btnmasuk: UIButton!
     @IBOutlet weak var btnDaftar: UIButton!
     
+    var loginUserApinya = [loginUser]()
+    let apiHelper = ApiHelper()
+    
+    
+    
     //MARK Function
     @IBAction func btnMasuk(_ sender: Any)
     {
-        
+       
+        if txtEmailTlp.text == ""
+        {
+            onLoginFail(title: "Pesan", message: "Masukkan email / Telepon yang sudah terdaftar")
+        }else if txtPassword.text == ""
+        {
+            onLoginFail(title: "Pesan", message: "Masukkan sandi yang sudah terdaftar")
+        }
+        else
+        {
+            
+            checkLogin(telepon: txtEmailTlp.text!, password: txtPassword.text!) { (status) in
+                if let statusnya = status
+                {
+                    if statusnya == true
+                    {
+                        let storyboard: UIStoryboard = UIStoryboard(name: "ProfileStoryboard", bundle: nil)
+                        let startingView = storyboard.instantiateViewController(withIdentifier: "profilelink")
+                        self.show(startingView, sender: self)
+                        
+                    }else
+                    {
+                        print("salah")
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+    
+    func checkLogin(telepon : String , password: String,completion: @escaping(Bool?) -> Void)
+    {
+        var status = false
+        let apiPath = "login"
+        let parameters = [
+            "phone" : telepon,
+            "password": password
+        ]
+        self.apiHelper.postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                
+                do {
+                    print(responseDictionary)
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        print("resultnya:\(result)")
+                        
+                        UserDefaults.standard.set(result["api_token"]!, forKey: "api_token")
+                        let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
+                        print(api_token)
+                        status = true
+                    } else {
+                        print("gagal translate result")
+                        status = false
+                    }
+                    
+                    completion(status)
+                } catch {
+                    print("Error on fetchPriceList: \(error.localizedDescription)")
+                }
+            } else {
+                completion(false)
+            }
+            
+        }
+    }
+    
+    
+    
+    func onLoginFail(title: String,message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func btnDaftar(_ sender: Any)

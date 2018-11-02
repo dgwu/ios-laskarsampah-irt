@@ -27,17 +27,16 @@
                                 </state>
                                 <connections>
                                     <action selector="btnMasuk:" destination="7ez-z1-k6g" eventType="touchUpInside" id="Qs6-UG-QAl"/>
-                                    <segue destination="ALg-ya-nsM" kind="show" identifier="toHome" id="49H-8O-dPk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email / Telepon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-MX-LjY">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="72121" borderStyle="roundedRect" placeholder="Email / Telepon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-MX-LjY">
                                 <rect key="frame" x="16" y="301" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sandi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-fp-5n5">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="Sandi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-fp-5n5">
                                 <rect key="frame" x="16" y="346" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -92,14 +91,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvN-UA-EMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="-518.7192118226601"/>
-        </scene>
-        <!--ProfileStoryboard-->
-        <scene sceneID="sFW-gn-Tii">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ProfileStoryboard" id="ALg-ya-nsM" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S5v-b4-ZC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1320" y="-664"/>
         </scene>
         <!--RegisterStoryboard-->
         <scene sceneID="v4g-ec-98z">

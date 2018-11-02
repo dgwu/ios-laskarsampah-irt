@@ -154,6 +154,7 @@ class ApiHelper {
                 
                 do {
                     if let result = responseDictionary["result"] as? [String : Any] {
+                        print("resultnya Cetak : \(result)")
                         if let wasteBank = result["bank"] as? [[String : Any]] {
                         
                             // turn dictionary into data JsonDataObject
@@ -169,45 +170,6 @@ class ApiHelper {
                             return
                         } else {
                             print("gagal translate list Bank")
-                        }
-                    } else {
-                        print("gagal translate result")
-                    }
-                } catch {
-                    print("Error on fetchPriceList: \(error.localizedDescription)")
-                }
-            }
-            completion(nil)
-        }
-    }
-    
-    
-    func fetchBankListBy(ID : Int, longitude : Double , latitude: Double, completion: @escaping([ListBankSampah]?) -> Void)
-    {
-        let apiPath = "getWasteBank"
-        let parameters = [
-            "latitude" : latitude,
-            "longitude": longitude
-        ]
-        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
-            if let responseDictionary = responseDictionary {
-                
-                do {
-                    if let result = responseDictionary["result"] as? [String : Any] {
-                        if let wasteBank = result["bank"] as? [[String : Any]] {
-                            
-                            // turn dictionary into data JsonDataObject
-                            let jsonData = try JSONSerialization.data(withJSONObject: wasteBank, options: JSONSerialization.WritingOptions.sortedKeys)
-                            
-                            print("datanya ::::::::: \(jsonData)")
-                            
-                            print(wasteBank)
-                            let listBankStructs = try JSONDecoder().decode([ListBankSampah].self, from: jsonData)
-                            
-                            completion(listBankStructs)
-                            return
-                        } else {
-                            print("gagal translate price list")
                         }
                     } else {
                         print("gagal translate result")
