@@ -253,6 +253,77 @@ class ApiHelper {
     }
     
     /*
+     Fungsi untuk mendapatkan list transaksi
+     */
+    func fetchTransactionList(apiToken: String, completion: @escaping([Transaction]?) -> Void) {
+        let apiPath = "gettransactions"
+        let parameters = [
+            "api_token" : apiToken
+        ]
+        
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        if let transactions = result["transactions"] as? [[String : Any]] {
+                            // turn dictionary into data JsonDataObject
+                            let jsonData = try JSONSerialization.data(withJSONObject: transactions, options: JSONSerialization.WritingOptions.sortedKeys)
+                
+                            let transactionStructs = try JSONDecoder().decode([Transaction].self, from: jsonData)
+                            
+                            completion(transactionStructs)
+                            return
+                        } else {
+                            print("gagal translate transaction list")
+                        }
+                    } else {
+                        print("gagal translate result")
+                    }
+                } catch {
+                    print("Error on fetchTransactionList: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
+    
+    /*
+     Fungsi untuk mendapatkan detail transaksi
+     */
+    func fetchTransactionDetail(apiToken: String, transactionId: Int, completion: @escaping([TransactionDetail]?) -> Void) {
+        let apiPath = "gettransactiondetail"
+        let parameters: [String:Any] = [
+            "api_token" : apiToken,
+            "transaction_id" : transactionId
+        ]
+        
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        if let details = result["transaction_detail"] as? [[String : Any]] {
+                            // turn dictionary into data JsonDataObject
+                            let jsonData = try JSONSerialization.data(withJSONObject: details, options: JSONSerialization.WritingOptions.sortedKeys)
+                            
+                            let detailStructs = try JSONDecoder().decode([TransactionDetail].self, from: jsonData)
+                            
+                            completion(detailStructs)
+                            return
+                        } else {
+                            print("gagal translate detail list")
+                        }
+                    } else {
+                        print("gagal translate result")
+                    }
+                } catch {
+                    print("Error on fetchTransactionDetail: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
+    
+    /*
      Function to lazy load image from URL and return UIImage on completion
      */
     static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {

@@ -27,6 +27,8 @@
 		918F0445216DA5D500A1764D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F0444216DA5D500A1764D /* HomeViewController.swift */; };
 		918F0447216DC54900A1764D /* NewsAndTipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F0446216DC54900A1764D /* NewsAndTipsCollectionViewCell.swift */; };
 		918F044A216DC97A00A1764D /* ItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F0449216DC97A00A1764D /* ItemPrice.swift */; };
+		91EE0588218C5C9E00B34190 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE0587218C5C9E00B34190 /* Transaction.swift */; };
+		91EE058A218C5FB700B34190 /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE0589218C5FB700B34190 /* TransactionDetail.swift */; };
 		F311B719216DC6EA001E3123 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F311B718216DC6EA001E3123 /* LoginStoryboard.storyboard */; };
 		F311B71B216DC6FE001E3123 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311B71A216DC6FE001E3123 /* LoginViewController.swift */; };
 		F399F3C22174390E001FBE8C /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F399F3C12174390E001FBE8C /* RegisterStoryboard.storyboard */; };
@@ -64,6 +66,8 @@
 		918F0444216DA5D500A1764D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		918F0446216DC54900A1764D /* NewsAndTipsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAndTipsCollectionViewCell.swift; sourceTree = "<group>"; };
 		918F0449216DC97A00A1764D /* ItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPrice.swift; sourceTree = "<group>"; };
+		91EE0587218C5C9E00B34190 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		91EE0589218C5FB700B34190 /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		F311B718216DC6EA001E3123 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		F311B71A216DC6FE001E3123 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F399F3C12174390E001FBE8C /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				F399F3CC2174FFAA001FBE8C /* ListBankSampah.swift */,
 				912D559D218A576700FFE9CC /* News.swift */,
 				F3D8A959218BFD9000B94218 /* loginUser.swift */,
+				91EE0587218C5C9E00B34190 /* Transaction.swift */,
+				91EE0589218C5FB700B34190 /* TransactionDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91EE0588218C5C9E00B34190 /* Transaction.swift in Sources */,
 				F399F3C421743923001FBE8C /* RegisterViewController.swift in Sources */,
 				F311B71B216DC6FE001E3123 /* LoginViewController.swift in Sources */,
 				F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */,
@@ -331,6 +338,7 @@
 				F399F3CB21746975001FBE8C /* BankSampahViewController.swift in Sources */,
 				918F044A216DC97A00A1764D /* ItemPrice.swift in Sources */,
 				91692B70216EECD30032B031 /* QRCodeViewController.swift in Sources */,
+				91EE058A218C5FB700B34190 /* TransactionDetail.swift in Sources */,
 				918F0445216DA5D500A1764D /* HomeViewController.swift in Sources */,
 				F399F3CD2174FFAA001FBE8C /* ListBankSampah.swift in Sources */,
 			);
