@@ -43,26 +43,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lupa Sandi Klik " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeZ-IV-dUS">
-                                <rect key="frame" x="66" y="519" width="243" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 6.2-1" translatesAutoresizingMaskIntoConstraints="NO" id="gdI-eb-Fdt">
                                 <rect key="frame" x="99" y="107" width="176" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-Wv-Hmy">
-                                <rect key="frame" x="189" y="513" width="42" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Disini"/>
-                                <connections>
-                                    <action selector="btnLupaPassword:" destination="7ez-z1-k6g" eventType="touchUpInside" id="2nV-54-ogG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smc-vr-3Te">
                                 <rect key="frame" x="36" y="462" width="304" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,7 +57,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnDaftar:" destination="7ez-z1-k6g" eventType="touchUpInside" id="5Qp-Ny-2Ep"/>
-                                    <segue destination="BmF-6B-k3l" kind="show" id="Qop-Yn-UxW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,11 +69,21 @@
                         <outlet property="btnmasuk" destination="hWv-iE-22K" id="MoZ-ht-2jS"/>
                         <outlet property="txtEmailTlp" destination="aqq-MX-LjY" id="qbc-t0-XL2"/>
                         <outlet property="txtPassword" destination="EdE-fp-5n5" id="FJ1-CR-uVq"/>
+                        <segue destination="BmF-6B-k3l" kind="show" identifier="registerShow" id="4CQ-nc-GMW"/>
+                        <segue destination="KQZ-bA-cMR" kind="show" identifier="profileShow" id="rJt-MU-RDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvN-UA-EMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="-518.7192118226601"/>
+        </scene>
+        <!--ProfileStoryboard-->
+        <scene sceneID="Ctd-7L-hYA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileStoryboard" id="KQZ-bA-cMR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aj5-Hi-AAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="-667"/>
         </scene>
         <!--RegisterStoryboard-->
         <scene sceneID="v4g-ec-98z">

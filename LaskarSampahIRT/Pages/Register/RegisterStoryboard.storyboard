@@ -75,7 +75,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnSimpanClick:" destination="0Vn-oj-hdY" eventType="touchUpInside" id="0ID-vQ-33d"/>
-                                    <segue destination="HGF-g0-x2A" kind="show" id="HuJ-Ai-vcN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,6 +89,7 @@
                         <outlet property="txtPassword" destination="Aab-nQ-RYu" id="1oF-yv-HHV"/>
                         <outlet property="txtRePassword" destination="JiH-VO-rD2" id="eA3-jM-Fbf"/>
                         <outlet property="txtTelepon" destination="VVY-Gp-2YZ" id="NaS-nj-0O5"/>
+                        <segue destination="HGF-g0-x2A" kind="show" identifier="profileShow" id="owy-Ln-Dto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8B-Mt-913" userLabel="First Responder" sceneMemberID="firstResponder"/>

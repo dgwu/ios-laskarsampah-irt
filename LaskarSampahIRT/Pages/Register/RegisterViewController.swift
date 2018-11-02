@@ -21,6 +21,21 @@ class RegisterViewController: UIViewController {
     let apiHelper = ApiHelper()
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinasi = segue.destination as? ProfileViewController
+        {
+            let backItem = UIBarButtonItem()
+            //backItem.title = "Logout"
+            backItem.title = ""
+//            navigationItem.backBarButtonItem = "backItem"
+        } else{
+            let backItem = UIBarButtonItem()
+//            backItem.title = "Back"
+              backItem.title = ""
+//            navigationItem.backBarButtonItem = backItem
+        }
+    }
+    
     @IBAction func btnSimpanClick(_ sender: Any)
     {
         guard let nama = txtNama.text,
@@ -39,7 +54,11 @@ class RegisterViewController: UIViewController {
                     // success, keep token to UserDefault
                     UserDefaults.standard.set(apiToken, forKey: "api_token")
                     let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
-                    print(apiToken)
+                    DispatchQueue.main.async
+                        {
+                        print(apiToken)
+                        self.performSegue(withIdentifier: "profileShow", sender: nil)
+                        }
                 } else {
                     // fail, notify user
                     print("gagal")
@@ -51,6 +70,9 @@ class RegisterViewController: UIViewController {
     }
     
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -63,7 +85,8 @@ class RegisterViewController: UIViewController {
         btnSimpan.layer.borderColor =  #colorLiteral(red: 0.8214223385, green: 0.81848979, blue: 0.1368253231, alpha: 1)
         btnSimpan.layer.borderWidth = 5
         
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
     }
     

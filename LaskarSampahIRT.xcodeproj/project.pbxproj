@@ -38,6 +38,7 @@
 		F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */; };
 		F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */; };
 		F3D8A95A218BFD9000B94218 /* loginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A959218BFD9000B94218 /* loginUser.swift */; };
+		F3D8A95C218C615F00B94218 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95B218C615F00B94218 /* GetUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		F399F3D02175980A001FBE8C /* DetailBankSampahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBankSampahViewController.swift; sourceTree = "<group>"; };
 		F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		F3D8A959218BFD9000B94218 /* loginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginUser.swift; sourceTree = "<group>"; };
+		F3D8A95B218C615F00B94218 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				917DFFFC2182C54500E14ABB /* ApiHelper.swift */,
 				917DFFFE2182C5BD00E14ABB /* URL+Helpers.swift */,
 				910BE141218989B000DF8CFC /* UIView+Helper.swift */,
+				F3D8A95B218C615F00B94218 /* GetUser.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F399F3C421743923001FBE8C /* RegisterViewController.swift in Sources */,
 				F311B71B216DC6FE001E3123 /* LoginViewController.swift in Sources */,
 				F399F3D12175980A001FBE8C /* DetailBankSampahViewController.swift in Sources */,
+				F3D8A95C218C615F00B94218 /* GetUser.swift in Sources */,
 				912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */,
 				918F042F216DA31400A1764D /* MainViewController.swift in Sources */,
 				910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */,
