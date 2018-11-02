@@ -14,7 +14,8 @@ class QRCodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        qrImageView.image = QRCodeHelper().generateQRCodeV2(from: "0812 5564 8776")
+        let telepon = UserDefaults.standard.string(forKey: "telepon") ?? "08170051087"
+        qrImageView.image = QRCodeHelper().generateQRCodeV2(from: telepon)
         // Do any additional setup after loading the view.
     }
     

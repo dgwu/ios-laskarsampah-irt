@@ -23,7 +23,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-RR-Ukm">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v4i-bZ-2ao">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v4i-bZ-2ao">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                 <color key="backgroundColor" red="0.99945229290000004" green="0.98950296640000002" blue="0.92548209429999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>

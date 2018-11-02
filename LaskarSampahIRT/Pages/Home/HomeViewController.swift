@@ -72,6 +72,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         cell.newsLabel.text = news.judul
+        let path = UIBezierPath(roundedRect:cell.newsImageView.bounds,
+                                byRoundingCorners:[.topRight, .topLeft],
+                                cornerRadii: CGSize(width: 10, height:  10))
+        
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = path.cgPath
+        cell.newsImageView.layer.mask = maskLayer
         
         return cell
     }

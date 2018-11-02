@@ -324,6 +324,41 @@ class ApiHelper {
     }
     
     /*
+     Fungsi utk get user profile
+     */
+    func fetchUserProfile(apiToken: String, completion: @escaping(userLogin?) -> Void) {
+        let apiPath = "getuserprofile"
+        let parameters = [
+            "api_token" : apiToken
+        ]
+        
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        if let profile = result["user"] as? [String : Any] {
+                            // turn dictionary into data JsonDataObject
+                            let jsonData = try JSONSerialization.data(withJSONObject: profile, options: JSONSerialization.WritingOptions.sortedKeys)
+                            
+                            let profileStruct = try JSONDecoder().decode(userLogin.self, from: jsonData)
+                            
+                            completion(profileStruct)
+                            return
+                        } else {
+                            print("gagal translate user profile")
+                        }
+                    } else {
+                        print("gagal translate result")
+                    }
+                } catch {
+                    print("Error on fetchUserProfile: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
+    
+    /*
      Function to lazy load image from URL and return UIImage on completion
      */
     static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {

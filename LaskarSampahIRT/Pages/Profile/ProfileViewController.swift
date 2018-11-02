@@ -15,6 +15,12 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var viewHistory: UIView!
     
     @IBOutlet weak var imgRateing: UIImageView!
+    
+    var TransaksiList = [Transaction]()
+    let apiHelper = ApiHelper()
+    
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -29,6 +35,37 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         tableViewHistory.delegate = self
         tableViewHistory.dataSource = self
         setupView()
+        
+        let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
+        print("ini iptokennya\(api_token)")
+        self.apiHelper.fetchTransactionList(apiToken: api_token) { (TransaksiList) in
+            if let transaksiList = TransaksiList
+            {
+                self.TransaksiList = transaksiList
+                DispatchQueue.main.async
+                    {
+                        self.tableViewHistory.reloadData()
+                }
+            }
+        }
+        
+    }
+    
+    func getUserDetail(apiUser : String)
+    {
+        
+        
+//        self.apiHelper.fe(longitude: currentLocation.coordinate.longitude, latitude: currentLocation.coordinate.latitude)
+//        { (ListBankSampah) in
+//            if let BankList = ListBankSampah
+//            {
+//                self.bankList = BankList
+//                DispatchQueue.main.async
+//                    {
+//                        self.tableViewBank.reloadData()
+//                }
+//            }
+//        }
         
         
     }
@@ -51,19 +88,32 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return TransaksiList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryTableViewCell
-        // let bank = dummyLocationBank[indexPath.row]
-        cell.lblTanggal.text = "12/10/2018 03:20 PM"
-        cell.lblpoin1.text = "80"
-        cell.lblpoin2.text = "120"
-        cell.totalPoin.text = "200"
+        let transaksi = TransaksiList[indexPath.row]
+        
+        cell.lblTanggal.text = transaksi.tanggal
+        cell.lblpoin1.text = transaksi.namaBank
+        cell.lblpoin2.text = ""
+        cell.totalPoin.text = "\(transaksi.grandTotal)"
+
+        
         
         return cell
+        
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryTableViewCell
+//        // let bank = dummyLocationBank[indexPath.row]
+//        cell.lblTanggal.text = "12/10/2018 03:20 PM"
+//        cell.lblpoin1.text = "80"
+//        cell.lblpoin2.text = "120"
+//        cell.totalPoin.text = "200"
+//
+//        return cell
     }
 
 }

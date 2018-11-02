@@ -13,11 +13,10 @@ struct userLogin: Codable
     let id: Int
     let nama: String
     let telepon: String
-    let email: String
-    let password: String
-    let alamat : String
-    let api_token: String
-    let status: String
+    let alamat : String?
+    let api_token: String?
+    let email: String?
+    let status: String?
 }
 
 // ini buat dapetin token usernya
