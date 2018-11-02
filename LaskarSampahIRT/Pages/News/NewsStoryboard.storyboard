@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-RR-Ukm">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v4i-bZ-2ao">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
@@ -52,6 +52,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="sRR-XN-P7V" firstAttribute="top" secondItem="Ejf-tA-J0E" secondAttribute="bottom" constant="8" id="0JJ-ZS-Sov"/>
+                                            <constraint firstAttribute="bottom" secondItem="gFm-YD-AeB" secondAttribute="bottom" id="0YW-JW-xqS"/>
                                             <constraint firstItem="Ejf-tA-J0E" firstAttribute="top" secondItem="v4i-bZ-2ao" secondAttribute="bottom" constant="8" id="11J-sb-zeV"/>
                                             <constraint firstAttribute="trailing" secondItem="gFm-YD-AeB" secondAttribute="trailing" constant="16" id="7dY-4a-iSX"/>
                                             <constraint firstAttribute="trailing" secondItem="sRR-XN-P7V" secondAttribute="trailing" constant="16" id="NKt-Xh-ZiA"/>
