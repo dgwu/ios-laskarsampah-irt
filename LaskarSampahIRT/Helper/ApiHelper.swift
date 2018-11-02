@@ -220,7 +220,40 @@ class ApiHelper {
         }
     }
     
+    /*
+     Fungsi untuk register user
+     akan return api_token dalam completion jika berhasil
+     akan return nil dalam completion jika gagal
+     */
+    func registerUser(nama: String, email: String?, telepon: String, password: String, completion: @escaping(String?) -> Void) {
+        let apiPath = "register"
+        let parameters = [
+            "nama" : nama,
+            "telepon" : telepon,
+            "password" : password,
+            "email" : email ?? ""
+        ]
+        
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                if let result = responseDictionary["result"] as? [String : Any] {
+                    if let apiToken = result["api_token"] as? String {
+                        completion(apiToken)
+                        return
+                    } else {
+                        print("gagal translate api token")
+                    }
+                } else {
+                    print("gagal translate result")
+                }
+            }
+            completion(nil)
+        }
+    }
     
+    /*
+     Function to lazy load image from URL and return UIImage on completion
+     */
     static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
         let imageUrl = URL(string: urlString)!
         let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
