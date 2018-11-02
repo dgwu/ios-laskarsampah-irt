@@ -182,7 +182,79 @@ class ApiHelper {
         }
     }
     
+  
+    func fetchBankListBy(ID : Int, longitude : Double , latitude: Double, completion: @escaping([ListBankSampah]?) -> Void)
+    {
+        let apiPath = "getWasteBank"
+        let parameters = [
+            "latitude" : latitude,
+            "longitude": longitude
+        ]
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                
+                do {
+                    if let result = responseDictionary["result"] as? [String : Any] {
+                        if let wasteBank = result["bank"] as? [[String : Any]] {
+                            
+                            // turn dictionary into data JsonDataObject
+                            let jsonData = try JSONSerialization.data(withJSONObject: wasteBank, options: JSONSerialization.WritingOptions.sortedKeys)
+                            
+                            print("datanya ::::::::: \(jsonData)")
+                            
+                            print(wasteBank)
+                            let listBankStructs = try JSONDecoder().decode([ListBankSampah].self, from: jsonData)
+                            
+                            completion(listBankStructs)
+                            return
+                        } else {
+                            print("gagal translate price list")
+                        }
+                    } else {
+                        print("gagal translate result")
+                    }
+                } catch {
+                    print("Error on fetchPriceList: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
     
+    /*
+     Fungsi untuk register user
+     akan return api_token dalam completion jika berhasil
+     akan return nil dalam completion jika gagal
+     */
+    func registerUser(nama: String, email: String?, telepon: String, password: String, completion: @escaping(String?) -> Void) {
+        let apiPath = "register"
+        let parameters = [
+            "nama" : nama,
+            "telepon" : telepon,
+            "password" : password,
+            "email" : email ?? ""
+        ]
+        
+        postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                if let result = responseDictionary["result"] as? [String : Any] {
+                    if let apiToken = result["api_token"] as? String {
+                        completion(apiToken)
+                        return
+                    } else {
+                        print("gagal translate api token")
+                    }
+                } else {
+                    print("gagal translate result")
+                }
+            }
+            completion(nil)
+        }
+    }
+    
+    /*
+     Function to lazy load image from URL and return UIImage on completion
+     */
     static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
         let imageUrl = URL(string: urlString)!
         let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in

@@ -18,13 +18,36 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var btnSimpan: UIButton!
     
     @IBOutlet weak var backView: UIView!
+    let apiHelper = ApiHelper()
     
     
     @IBAction func btnSimpanClick(_ sender: Any)
     {
+        guard let nama = txtNama.text,
+//            let email = txtEmail.text,  because email is optional
+            let telepon = txtTelepon.text,
+            let password = txtPassword.text,
+            let rePassword = txtRePassword.text
+        else {
+            return
+        }
         
-        
-        
+        if password == rePassword {
+            // do registration
+            self.apiHelper.registerUser(nama: nama, email: txtEmail.text, telepon: telepon, password: password) { (apiToken) in
+                if let apiToken = apiToken {
+                    // success, keep token to UserDefault
+                    UserDefaults.standard.set(apiToken, forKey: "api_token")
+                    let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
+                    print(apiToken)
+                } else {
+                    // fail, notify user
+                    print("gagal")
+                }
+            }
+        } else {
+            // notify user password is not match
+        }
     }
     
     
