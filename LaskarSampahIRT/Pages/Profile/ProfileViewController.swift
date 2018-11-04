@@ -18,7 +18,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     var TransaksiList = [Transaction]()
     let apiHelper = ApiHelper()
-    
+    var index : Int!
+
     
     
     override func viewDidLoad()
@@ -114,6 +115,13 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
 //        cell.totalPoin.text = "200"
 //
 //        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("index ke \(indexPath.row) di click")
+        index = indexPath.row
+        performSegue(withIdentifier: "ShowDetail", sender: nil)
+        
     }
 
 }

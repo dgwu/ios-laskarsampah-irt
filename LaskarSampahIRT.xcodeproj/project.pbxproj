@@ -41,6 +41,8 @@
 		F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */; };
 		F3D8A95A218BFD9000B94218 /* loginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A959218BFD9000B94218 /* loginUser.swift */; };
 		F3D8A95C218C615F00B94218 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95B218C615F00B94218 /* GetUser.swift */; };
+		F3D8A95E218C7B9000B94218 /* detailHistoriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95D218C7B9000B94218 /* detailHistoriTableViewCell.swift */; };
+		F3D8A960218C7C2500B94218 /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95F218C7C2500B94218 /* detailHistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		F3D8A959218BFD9000B94218 /* loginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginUser.swift; sourceTree = "<group>"; };
 		F3D8A95B218C615F00B94218 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
+		F3D8A95D218C7B9000B94218 /* detailHistoriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailHistoriTableViewCell.swift; sourceTree = "<group>"; };
+		F3D8A95F218C7C2500B94218 /* detailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailHistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */,
 				9155FDBB2175E98000761A1B /* ProfileViewController.swift */,
 				F3AB5E082176062E0046604D /* HistoryTableViewCell.swift */,
+				F3D8A95D218C7B9000B94218 /* detailHistoriTableViewCell.swift */,
+				F3D8A95F218C7C2500B94218 /* detailHistoryViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -337,9 +343,11 @@
 				F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */,
 				F399F3CB21746975001FBE8C /* BankSampahViewController.swift in Sources */,
 				918F044A216DC97A00A1764D /* ItemPrice.swift in Sources */,
+				F3D8A960218C7C2500B94218 /* detailHistoryViewController.swift in Sources */,
 				91692B70216EECD30032B031 /* QRCodeViewController.swift in Sources */,
 				91EE058A218C5FB700B34190 /* TransactionDetail.swift in Sources */,
 				918F0445216DA5D500A1764D /* HomeViewController.swift in Sources */,
+				F3D8A95E218C7B9000B94218 /* detailHistoriTableViewCell.swift in Sources */,
 				F399F3CD2174FFAA001FBE8C /* ListBankSampah.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
