@@ -10,6 +10,11 @@ import UIKit
 
 class detailHistoriTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblNama: UILabel!
+    @IBOutlet weak var lbllJumlah: UILabel!
+    @IBOutlet weak var lblPoin: UILabel!
+    @IBOutlet weak var lblTotal: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

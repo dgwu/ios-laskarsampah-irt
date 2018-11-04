@@ -46,14 +46,14 @@ class DetailBankSampahViewController: UIViewController {
         let locManager = CLLocationManager()
         locManager.requestWhenInUseAuthorization()
         
-        var currentLocation: CLLocation!
+//        var currentLocation: CLLocation!
         
-        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
-            currentLocation = locManager.location
-        }
-        let currLatitude = currentLocation.coordinate.latitude
-        let currLongitude = currentLocation.coordinate.longitude
+//        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+//            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+//            currentLocation = locManager.location
+//        }
+//        let currLatitude = currentLocation.coordinate.latitude
+//        let currLongitude = currentLocation.coordinate.longitude
         
         
         
