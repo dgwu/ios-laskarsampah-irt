@@ -37,59 +37,61 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         else
         {
             
-            checkLogin(telepon: txtEmailTlp.text!, password: txtPassword.text!) { (status) in
-                if let statusnya = status
-                {
-                    if statusnya == true
-                    {
-                        let storyboard: UIStoryboard = UIStoryboard(name: "ProfileStoryboard", bundle: nil)
-                        let startingView = storyboard.instantiateViewController(withIdentifier: "profilelink")
-                        self.show(startingView, sender: self)
-                        
-                    }else
-                    {
-                        print("salah")
-                    }
-                    
-                }
-            }
-            
+//            checkLogin(telepon: txtEmailTlp.text!, password: txtPassword.text!) { (status) in
+//                if let statusnya = status
+//                {
+//                    if statusnya == true
+//                    {
+////
+//
+//                       self.performSegue(withIdentifier: "profileShow", sender: nil)
+//
+//                    }else
+//                    {
+//                        print("salah")
+//                    }
+//
+//                }
+//            }
+            checkLogin(telepon: txtEmailTlp.text!, password: txtPassword.text!)
         }
     }
     
-    func checkLogin(telepon : String , password: String,completion: @escaping(Bool?) -> Void)
+    
+    
+    
+    func checkLogin(telepon : String , password: String)
     {
-        var status = false
         let apiPath = "login"
         let parameters = [
             "phone" : telepon,
             "password": password
         ]
         self.apiHelper.postAndCheckIsValid(apiPath: apiPath, parameters: parameters) { (responseDictionary) in
-            if let responseDictionary = responseDictionary {
+            if let responseDictionary = responseDictionary
+            {
                 
                 do {
-                    print(responseDictionary)
                     if let result = responseDictionary["result"] as? [String : Any] {
-                        print("resultnya:\(result)")
-                        
-                        UserDefaults.standard.set(result["api_token"]!, forKey: "api_token")
-                        let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
-                        print(api_token)
-                        status = true
+                    print("resultnya:\(result)")
+                        DispatchQueue.main.async {
+                            UserDefaults.standard.set(result["api_token"]!, forKey: "api_token")
+                            let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
+                            print(api_token)
+                            GetUser.init(apitoken: api_token)
+                            
+                            self.performSegue(withIdentifier: "profileShow", sender: nil)
+                        }
                     } else {
                         print("gagal translate result")
-                        status = false
                     }
                     
-                    completion(status)
-                } catch {
-                    print("Error on fetchPriceList: \(error.localizedDescription)")
-                }
-            } else {
-                completion(false)
+                   // completion(status)
+                } catch
+                    {
+                        print("Error on fetchPriceList: \(error.localizedDescription)")
+                    }
             }
-            
         }
     }
     
@@ -103,7 +105,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate
     
     @IBAction func btnDaftar(_ sender: Any)
     {
-        
+        self.performSegue(withIdentifier: "registerShow", sender: nil)
     }
     
     @IBAction func btnLupaPassword(_ sender: Any)
@@ -115,12 +117,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         if let destinasi = segue.destination as? ProfileViewController
         {
             let backItem = UIBarButtonItem()
-            backItem.title = "Logout"
-            navigationItem.backBarButtonItem = backItem
+           // backItem.title = "Logout"
+             backItem.title = ""
+//            navigationItem.backBarButtonItem = backItem
         } else{
             let backItem = UIBarButtonItem()
-            backItem.title = "Back"
-            navigationItem.backBarButtonItem = backItem
+            //backItem.title = "Back"
+            backItem.title = ""
+//            navigationItem.backBarButtonItem = backItem
         }
     }
     
