@@ -50,5 +50,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>Privacy - Siri Usage Description</key>
+	<string>Receive point easier with Siri</string>
 </dict>
 </plist>

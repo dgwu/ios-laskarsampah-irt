@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 class MainViewController: UITabBarController {
 
@@ -14,6 +15,7 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupView()
+        getSiriPermission()
     }
     
     func setupView() {
@@ -22,6 +24,17 @@ class MainViewController: UITabBarController {
         let mask = CAShapeLayer()
         mask.path = newPath.cgPath
         tabBar.layer.mask = mask
+    }
+    
+    func getSiriPermission() {
+        INPreferences.requestSiriAuthorization { authorizationStatus in
+            switch authorizationStatus {
+            case .authorized:
+                print("Authorized")
+            default:
+                print("Not Authorized")
+            }
+        }
     }
 
 
