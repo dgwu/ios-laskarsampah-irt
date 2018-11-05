@@ -19,8 +19,16 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     var TransaksiList = [Transaction]()
     let apiHelper = ApiHelper()
    var index : Int!
-
     
+    @IBOutlet weak var lblNama: UILabel!
+    @IBOutlet weak var lblTelepon: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblPoin: UILabel!
+    
+    var userLoginData: userLogin?
+    
+    
+    var totalPoinUser : Double = 0
     
     override func viewDidLoad()
     {
@@ -36,7 +44,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         tableViewHistory.delegate = self
         tableViewHistory.dataSource = self
         setupView()
-        
+        getUserDetail()
         let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
         print("ini iptokennya\(api_token)")
         self.apiHelper.fetchTransactionList(apiToken: api_token) { (TransaksiList) in
@@ -52,9 +60,24 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         
     }
     
-    func getUserDetail(apiUser : String)
+    func getUserDetail()
     {
         
+        let api_token = UserDefaults.standard.string(forKey: "api_token") ?? ""
+        self.apiHelper.fetchUserProfile(apiToken: api_token) { (userLogin) in
+            if let userLogins = userLogin
+            {
+                print(userLogins)
+                self.userLoginData = userLogins
+                DispatchQueue.main.async
+                {
+                    self.lblNama.text = self.userLoginData?.nama
+                    self.lblTelepon.text = self.userLoginData?.telepon
+                    self.lblEmail.text = self.userLoginData?.email
+                    self.lblPoin.text = "\(self.totalPoinUser)"
+                }
+            }
+        }
         
 //        self.apiHelper.fe(longitude: currentLocation.coordinate.longitude, latitude: currentLocation.coordinate.latitude)
 //        { (ListBankSampah) in
@@ -100,7 +123,10 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         cell.lblTanggal.text = transaksi.tanggal
         cell.lblpoin1.text = transaksi.namaBank
         cell.lblpoin2.text = ""
+        self.totalPoinUser += transaksi.grandTotal
         cell.totalPoin.text = "\(transaksi.grandTotal)"
+        
+        
 
         
         

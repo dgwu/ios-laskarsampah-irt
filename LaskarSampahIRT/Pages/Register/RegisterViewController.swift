@@ -25,14 +25,14 @@ class RegisterViewController: UIViewController {
         if let destinasi = segue.destination as? ProfileViewController
         {
             let backItem = UIBarButtonItem()
-            //backItem.title = "Logout"
-            backItem.title = ""
-//            navigationItem.backBarButtonItem = "backItem"
+            backItem.title = "Logout"
+            //backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         } else{
             let backItem = UIBarButtonItem()
-//            backItem.title = "Back"
-              backItem.title = ""
-//            navigationItem.backBarButtonItem = backItem
+            backItem.title = "Back"
+//              backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
     

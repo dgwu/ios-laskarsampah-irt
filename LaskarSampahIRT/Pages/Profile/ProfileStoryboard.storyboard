@@ -201,6 +201,10 @@
                     <connections>
                         <outlet property="groupViewProfile" destination="4eG-bx-PXo" id="WNc-aQ-K1g"/>
                         <outlet property="imgRateing" destination="hEG-Vj-JBb" id="u5N-BN-IxP"/>
+                        <outlet property="lblEmail" destination="s6g-gM-Qd5" id="nxp-2k-ihg"/>
+                        <outlet property="lblNama" destination="snh-RH-xMK" id="y44-94-mf0"/>
+                        <outlet property="lblPoin" destination="Pjh-xw-red" id="mLs-wc-Zbw"/>
+                        <outlet property="lblTelepon" destination="Brf-qm-AaI" id="r1W-nz-ala"/>
                         <outlet property="tableViewHistory" destination="6dZ-2t-P66" id="pRT-eB-Fh7"/>
                         <outlet property="viewHistory" destination="N6t-9M-3cz" id="DUd-MC-ywU"/>
                         <segue destination="LbZ-uP-xDx" kind="show" identifier="ShowDetail" id="KhT-Xt-8tq"/>
