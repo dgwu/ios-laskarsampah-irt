@@ -18,7 +18,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     var TransaksiList = [Transaction]()
     let apiHelper = ApiHelper()
-    
+   var index : Int!
+
     
     
     override func viewDidLoad()
@@ -105,15 +106,21 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         return cell
         
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryTableViewCell
-//        // let bank = dummyLocationBank[indexPath.row]
-//        cell.lblTanggal.text = "12/10/2018 03:20 PM"
-//        cell.lblpoin1.text = "80"
-//        cell.lblpoin2.text = "120"
-//        cell.totalPoin.text = "200"
-//
-//        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("index ke \(indexPath.row) di click")
+        index = indexPath.row + 1
+        performSegue(withIdentifier: "ShowDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationalDetailHistory = segue.destination as? detailHistoryViewController
+        {
+            destinationalDetailHistory.api_user = UserDefaults.standard.string(forKey: "api_token") ?? ""
+            destinationalDetailHistory.idTrans = index
+            
+        }
     }
 
 }

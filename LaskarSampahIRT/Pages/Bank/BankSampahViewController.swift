@@ -97,8 +97,8 @@ class BankSampahViewController: UIViewController,UITableViewDataSource,UITableVi
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             currentLocation = locManager.location
         }
-        let currLatitude = currentLocation.coordinate.latitude
-        let currLongitude = currentLocation.coordinate.longitude
+//        let currLatitude = currentLocation.coordinate.latitude
+//        let currLongitude = currentLocation.coordinate.longitude
        
         self.apiHelper.fetchBankList(longitude: currentLocation.coordinate.longitude, latitude: currentLocation.coordinate.latitude)
         { (ListBankSampah) in
