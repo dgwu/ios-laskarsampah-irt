@@ -15,5 +15,21 @@ class GetUser {
     init(apitoken: String) {
         self.api = apitoken
     }
+}
+
+class UserCredential {
     
+    func getUserDefault() -> UserDefaults? {
+        return UserDefaults.init(suiteName: "com.danielgunawan.LaskarSampahIRT")
+    }
+    
+    func getTelepon() -> String {
+        let userDefault = self.getUserDefault()
+        if let telepon = userDefault?.string(forKey: "telepon") {
+            print("masuk telepon")
+        } else {
+            print("gak masuk telepon")
+        }
+        return userDefault?.string(forKey: "telepon") ?? "082227282872"
+    }
 }

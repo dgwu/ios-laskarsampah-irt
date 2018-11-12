@@ -71,10 +71,24 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
                 self.userLoginData = userLogins
                 DispatchQueue.main.async
                 {
+//                    UserDefaults.standard.set
                     self.lblNama.text = self.userLoginData?.nama
-                    self.lblTelepon.text = self.userLoginData?.telepon
+                    self.lblTelepon.text = self.userLoginData?.telepon.replacingOccurrences(of: "\"", with: "")
                     self.lblEmail.text = self.userLoginData?.email
                     self.lblPoin.text = "\(self.totalPoinUser)"
+                    
+                    if let userLoginDataTelepon = self.userLoginData?.telepon {
+                        let userCredential = UserCredential()
+                        
+                        if let userDefault = userCredential.getUserDefault() {
+                            print("user credential success")
+                            userDefault.set(userLoginDataTelepon.replacingOccurrences(of: "\"", with: ""), forKey: "telepon")
+                        } else {
+                            print("user credential failed")
+                        }
+                        
+                        UserDefaults.standard.set(userLoginDataTelepon.replacingOccurrences(of: "\"", with: ""), forKey: "telepon")
+                    }
                 }
             }
         }
@@ -136,7 +150,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("index ke \(indexPath.row) di click")
-        index = indexPath.row + 1
+        index = indexPath.row
         performSegue(withIdentifier: "ShowDetail", sender: nil)
     }
     
@@ -144,7 +158,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         if let destinationalDetailHistory = segue.destination as? detailHistoryViewController
         {
             destinationalDetailHistory.api_user = UserDefaults.standard.string(forKey: "api_token") ?? ""
-            destinationalDetailHistory.idTrans = index
+            destinationalDetailHistory.idTrans = TransaksiList[index].idTransaksi
             
         }
     }

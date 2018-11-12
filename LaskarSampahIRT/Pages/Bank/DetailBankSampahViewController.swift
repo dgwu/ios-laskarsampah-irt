@@ -19,7 +19,9 @@ class DetailBankSampahViewController: UIViewController {
     @IBOutlet weak var titleDetail: UINavigationItem!
     @IBOutlet weak var lblBankSampahTitle: UILabel!
     @IBOutlet weak var lblAlamat: UILabel!
-    @IBOutlet weak var lblTelepon: UILabel!
+//    @IBOutlet weak var lblTelepon: UILabel!
+    @IBOutlet weak var lblTelepon: UITextView!
+    
     @IBOutlet weak var lblContact: UILabel!
     var latitude : Double = 0
     var longtitude : Double = 0
@@ -77,7 +79,7 @@ class DetailBankSampahViewController: UIViewController {
         latitude = Double(bankSampah?.latitude ?? latitude)
         lblBankSampahTitle.text = bankSampah?.namaBank
         lblAlamat.text = bankSampah?.alamat
-        lblTelepon.text = bankSampah?.telepon
+        lblTelepon.text = bankSampah?.telepon.replacingOccurrences(of: "\"", with: "")
         //lblEmail.text = "\(bankSampah?.distance)"
         lblContact.text = bankSampah?.namaAdmin
         

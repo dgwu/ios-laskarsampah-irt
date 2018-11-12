@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BE141218989B000DF8CFC /* UIView+Helper.swift */; };
+		91170ADF218FFE8800ED9E53 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95B218C615F00B94218 /* GetUser.swift */; };
 		912D559E218A576700FFE9CC /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D559D218A576700FFE9CC /* News.swift */; };
 		912D55A1218A5B4500FFE9CC /* NewsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */; };
 		912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55A2218A5B5800FFE9CC /* NewsViewController.swift */; };
@@ -517,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91170ADF218FFE8800ED9E53 /* GetUser.swift in Sources */,
 				91969581218F5131009B5C73 /* IntentHandler.swift in Sources */,
 				9196959F218F5294009B5C73 /* QRCodeHelper.swift in Sources */,
 			);

@@ -29,7 +29,7 @@
                                     <action selector="btnMasuk:" destination="7ez-z1-k6g" eventType="touchUpInside" id="Qs6-UG-QAl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="72121" borderStyle="roundedRect" placeholder="Email / Telepon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-MX-LjY">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="08222728" borderStyle="roundedRect" placeholder="Email / Telepon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-MX-LjY">
                                 <rect key="frame" x="16" y="301" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -93,11 +93,11 @@
             </objects>
             <point key="canvasLocation" x="1329" y="-605"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="kCS-pX-Enb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XeO-13-HDo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Icon" id="lrD-ct-YOv"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="lrD-ct-YOv"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h8d-xi-gpG">
@@ -116,6 +116,5 @@
     </scenes>
     <resources>
         <image name="LASKARSAMPAHH" width="218" height="194"/>
-        <image name="Profile Icon" width="25" height="28"/>
     </resources>
 </document>

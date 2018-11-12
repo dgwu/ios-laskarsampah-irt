@@ -12,8 +12,9 @@ class IntentHandler: INExtension, INGetVisualCodeIntentHandling {
     func handle(intent: INGetVisualCodeIntent, completion: @escaping (INGetVisualCodeIntentResponse) -> Void) {
         
         let intentResponse = INGetVisualCodeIntentResponse(code: .success, userActivity: nil)
+        let userTelepon = "082227282872"
         
-        if let qrImage = QRCodeHelper().generateQRCodeV2(from: "082227282872"), let qrImageData = qrImage.pngData() {
+        if let qrImage = QRCodeHelper().generateQRCodeV2(from: userTelepon), let qrImageData = qrImage.pngData() {
             intentResponse.visualCodeImage = INImage(imageData: qrImageData)
         }
         
