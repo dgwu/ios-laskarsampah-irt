@@ -44,14 +44,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         self.priceTableView.layer.cornerRadius = 10
         
-        self.apiHelper.fetchNewsList { (newsList) in
-            if let newsList = newsList {
-                self.newsList = newsList
-                DispatchQueue.main.async {
-                    self.newsAndTipsCollectionView.reloadData()
-                }
+        
+        CloudKitHelper().fetchNewsRecord { (newsList) in
+            self.newsList = newsList
+            DispatchQueue.main.async {
+                self.newsAndTipsCollectionView.reloadData()
             }
         }
+//        self.apiHelper.fetchNewsList { (newsList) in
+//            if let newsList = newsList {
+//                self.newsList = newsList
+//                DispatchQueue.main.async {
+//                    self.newsAndTipsCollectionView.reloadData()
+//                }
+//            }
+//        }
     }
     
     // MARK: Collection View Delegate

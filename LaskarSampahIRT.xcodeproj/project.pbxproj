@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		910BE142218989B000DF8CFC /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BE141218989B000DF8CFC /* UIView+Helper.swift */; };
 		91170ADF218FFE8800ED9E53 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8A95B218C615F00B94218 /* GetUser.swift */; };
+		911E94E5219E807300904439 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E94E4219E807300904439 /* CloudKitHelper.swift */; };
 		912D559E218A576700FFE9CC /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D559D218A576700FFE9CC /* News.swift */; };
 		912D55A1218A5B4500FFE9CC /* NewsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */; };
 		912D55A3218A5B5800FFE9CC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55A2218A5B5800FFE9CC /* NewsViewController.swift */; };
+		914C60CB219E81410033D9EB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914C60CA219E81410033D9EB /* CloudKit.framework */; };
 		9155FDBA2175E97200761A1B /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */; };
 		9155FDBC2175E98000761A1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155FDBB2175E98000761A1B /* ProfileViewController.swift */; };
 		91692B6C216EEC7E0032B031 /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91692B6B216EEC7E0032B031 /* QRCodeHelper.swift */; };
@@ -87,9 +89,11 @@
 
 /* Begin PBXFileReference section */
 		910BE141218989B000DF8CFC /* UIView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
+		911E94E4219E807300904439 /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		912D559D218A576700FFE9CC /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		912D55A0218A5B4500FFE9CC /* NewsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsStoryboard.storyboard; sourceTree = "<group>"; };
 		912D55A2218A5B5800FFE9CC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		914C60CA219E81410033D9EB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9155FDB92175E97200761A1B /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		9155FDBB2175E98000761A1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		91692B6B216EEC7E0032B031 /* QRCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeHelper.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914C60CB219E81410033D9EB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +204,7 @@
 				917DFFFE2182C5BD00E14ABB /* URL+Helpers.swift */,
 				910BE141218989B000DF8CFC /* UIView+Helper.swift */,
 				F3D8A95B218C615F00B94218 /* GetUser.swift */,
+				911E94E4219E807300904439 /* CloudKitHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 		91969588218F5131009B5C73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				914C60CA219E81410033D9EB /* CloudKit.framework */,
 				91969589218F5131009B5C73 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
@@ -412,7 +419,13 @@
 					918F0428216DA31400A1764D = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -502,6 +515,7 @@
 				918F042D216DA31400A1764D /* AppDelegate.swift in Sources */,
 				91692B6C216EEC7E0032B031 /* QRCodeHelper.swift in Sources */,
 				F399F3CF217501D4001FBE8C /* detailBankTableViewCell.swift in Sources */,
+				911E94E5219E807300904439 /* CloudKitHelper.swift in Sources */,
 				F3AB5E092176062E0046604D /* HistoryTableViewCell.swift in Sources */,
 				F399F3CB21746975001FBE8C /* BankSampahViewController.swift in Sources */,
 				918F044A216DC97A00A1764D /* ItemPrice.swift in Sources */,
