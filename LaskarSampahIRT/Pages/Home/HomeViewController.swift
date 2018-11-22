@@ -75,6 +75,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let fetchedImage = fetchedImage {
                 DispatchQueue.main.async {
                     cell.newsImageView.image = fetchedImage
+                    cell.newsImageView.accessibilityActivate()
+                    cell.newsImageView.accessibilityLabel = "Image of \(news.judul)"
                 }
             }
         }
